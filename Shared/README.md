@@ -1,1 +1,2 @@
-This repo will consist of how shared library has been created in linux.
+# Concept
+This repo will consist of the all different concept used in configuring the file inside the linux for all the project which use C/C++ langauge.
