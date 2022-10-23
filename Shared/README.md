@@ -7,7 +7,7 @@
 
 
 **Step 1:- Creating a Position-Independent Object Code**
-- To build a shared library liblibrary.so of our sample header file [library.hpp](https://github.com/aabhinavg/Concept/tree/main/Shared/library.hpp) we invoke compiler and linker with different flags.
+- To build a shared library liblibrary.so for our sample function inside file [library.cpp](https://github.com/aabhinavg/Concept/tree/main/Shared/library.cpp) we invoke compiler and linker with different flags.
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp"> linux> g++ -c -fPIC library.cpp -o library.o
   The -fPIC flag says to compiler to generate Position-independent-Code 
   The -c flag to create the object code.
