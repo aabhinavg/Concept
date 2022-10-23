@@ -49,4 +49,12 @@ export LD_LIBRARY_PATH=$(CURDIR)/$(INSTALLDIR)
 execute:
 	$(INSTALLDIR)/out
 
-	
+.PHONY: help
+help:
+	@echo 'make clean      - Remove generated files'
+	@echo 'make all        - Create shared library' 
+	@echo 'make            - Create shared library' 
+	@echo 'make use_shared - Create executable using shared library'
+	@echo 'make execute    - Execute the executable which is created using shared library'
+	@echo 'follow step make;make use_shared;make execute'
+	@echo 'All things are created inside $(CURDIR)/$(INSTALLDIR)'	
