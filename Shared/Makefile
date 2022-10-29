@@ -6,9 +6,15 @@ CLEANEXTS   = o so d
 SHARED_LIBRARY = library.cpp
 OBJECT_FILE    = library.o
 SOURCE_FILE    = main.cpp
-OUTPUTFILE     = liblibrary.so
 INSTALLDIR     = binaries
 LIBRARY        = library
+
+ifeq ($(OS),Windows_NT)     # is Windows_NT on XP, 2000, 7, Vista, 10...
+	detected_OS := Windows
+	OUTPUTFILE   = liblibrary.dll
+else  
+	OUTPUTFILE=liblibrary.so
+endif
 
 .PHONY: all
 all: $(OUTPUTFILE)
@@ -22,7 +28,6 @@ $(OUTPUTFILE):
 	$(CXX) -shared  $(OBJECT_FILE) -o $(OUTPUTFILE)
 
 	mv  $(OUTPUTFILE) $(INSTALLDIR)
-
 
 .PHONY: clean 
 clean:
@@ -58,3 +63,4 @@ help:
 	@echo 'make execute    - Execute the executable which is created using shared library'
 	@echo 'follow step make;make use_shared;make execute'
 	@echo 'All things are created inside $(CURDIR)/$(INSTALLDIR)'	
+

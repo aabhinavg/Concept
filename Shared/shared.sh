@@ -38,13 +38,13 @@ clear
 echo "Step 2: Create shared library\n"
 echo "-----------------------------------------------"
 sleep 2
-echo "g++ -shared library.o -o liblibrary.so"
+echo "g++ -shared library.o -o liblibrary.dll"
 sleep 2
 echo "-----------------------------------------------\n\n"
 echo "He hahaha !!  Shared library created by you !! Give me party  🙂 \n "
 sleep 2
-g++ -shared $CDIR/build/library.o -o $CDIR/build/liblibrary.so
-ls $CDIR/build | grep liblibrary.so
+g++ -shared $CDIR/build/library.o -o $CDIR/build/liblibrary.dll
+ls $CDIR/build | grep liblibrary.dll
 sleep 2
 echo "shared :"
 	echo "Produce a shared object which can then be linked with other objects to form
@@ -68,35 +68,35 @@ echo "export LD_LIBRARY_PATH=$CDIR/build:$LD_LIBRARY_PATH"
 export LD_LIBRARY_PATH=$CDIR/build:$LD_LIBRARY_PATH
 sleep 8
 
-ls $CDIR/build | grep out
+ls $CDIR/build | grep out.exe
 echo "out file is created you can execute it now\n"
 clear
 echo "--------------------------------------------"
-echo  "./out"
+echo  "./out.exe"
 echo "--------------------------------------------\n"
-$CDIR/build/out
+$CDIR/build/out.exe
 sleep 7
 clear
 echo " All shared required by the out file created by you\n"
 echo "======================================================="
 echo "ldd $CDIR/build/out\n"
 echo "======================================================\n"
- ldd $CDIR/build/out
+ ldd $CDIR/build/out.exe
  sleep 8
 clear
 echo "\nYou can see that your shared library liblibrary.so is required by out\n"
 echo "=====================================\n"
-ldd $CDIR/build/out | grep liblibrary.so
+ldd $CDIR/build/out.exe | grep liblibrary.dll
 echo "======================================\n"
 sleep 8
 clear
 echo "Let see the function value_to_be_printed is their inside library or not\n"
 
-echo "nm liblibrary.so | grep value_to_be_printed"
+echo "nm liblibrary.dll | grep value_to_be_printed"
 
 echo "_____________________________________________\n"
 
-nm liblibrary.so | grep value
+nm liblibrary.dll | grep value
 
 echo "_______________________________________________\n"
 
@@ -105,10 +105,10 @@ sleep 8
 clear
 echo "Lets check in your executable where value_to_be_printed is present or not"
 
-echo "nm out | grep value_to_be_printed \n"
+echo "nm out.exe | grep value_to_be_printed \n"
 echo "__________________________________________________\n"
 
-nm out | grep value_to_be_printed
+nm out.exe | grep value_to_be_printed
 
 echo "__________________________________________________\n"
 echo "It say U means undefined"
