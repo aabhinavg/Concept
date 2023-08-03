@@ -15,7 +15,23 @@ mkdir  $CDIR/build
 
 
 echo "scirpt running for creating a shared library\n\n"
-
+echo "Wait for two second"
+sleep 2
+clear 
+echo "You can see the below source code 
+      Where main function -> value_to_be_printed(int)\n\n"
+echo "=======================================================\n"
+cat $CDIR/main.cpp
+echo "=======================================================\n"
+sleep 3
+echo "Defination of the function value_to_be_printed(int) is 
+      inside library.cpp for which we are going to create shared library
+      which will be linked with the main during runtime\n"
+      
+echo "=======================================================\n"
+cat $CDIR/library.cpp
+echo "=======================================================\n"
+sleep 3
 echo "Step 1 : compile the code above into an object file.\n\n"
 echo "--------------------------------------------"
 
