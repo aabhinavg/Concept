@@ -1,4 +1,4 @@
-#What is a Tree?
+# What is a Tree?
 
 The tree can be defined as a hirerachical data structure that consists of nodes that are connected using edges.
 
