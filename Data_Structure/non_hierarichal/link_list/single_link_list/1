@@ -1,0 +1,33 @@
+1include <iostream>
+#include "SingleLinkList.h"
+int main() {
+    SingleLinkList myList;
+
+    // Add elements to the front of the list
+    myList.addtoFront(5);
+    myList.addtoFront(10);
+    myList.addtoFront(15);
+
+    // Add elements to the end of the list
+    myList.addtoEnd(20);
+    myList.addtoEnd(25);
+
+    // Delete elements from the front of the list
+    int deletedValue = myList.deleteFromFront();
+    std::cout << "Deleted from the front: " << deletedValue << std::endl;
+
+    // Delete elements from the end of the list
+    deletedValue = myList.deleteFromEnd();
+    std::cout << "Deleted from the end: " << deletedValue << std::endl;
+
+    // Display the remaining elements in the list
+    SingleLinkListDefination* current = myList.start;
+    std::cout << "Remaining elements in the list: ";
+    while (current != nullptr) {
+        std::cout << current->data << " ";
+        current = current->upcoming;
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
